@@ -3,19 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <version>1.0</version>
     <groupId>com.hq</groupId>
     <artifactId>ontology</artifactId>
-    <version>1.0</version>
+    <packaging>jar</packaging>
 
     <properties>
         <jena.version>3.6.0</jena.version>
-        <java-rdfa.version>0.4.2</java-rdfa.version>
-        <slf4j.version>1.6.4</slf4j.version>
-        <log4j.version>1.2.16</log4j.version>
-        <jruby.version>1.6.5</jruby.version>
-        <poi.version>3.12</poi.version>
-        <junit.version>4.11</junit.version>
         <jdk.version>1.8</jdk.version>
+        <maven.compiler.version>3.7.0</maven.compiler.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -34,6 +30,21 @@
             <version>${jena.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
